@@ -32,3 +32,9 @@ body {
 nav span {
   font-family: 'Bungee', sans-serif;
 }
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  background-color: inherit;
+}
