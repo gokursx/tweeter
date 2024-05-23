@@ -1,0 +1,18 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  width: 100%;
+  background-color: #ab8000;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+  padding-top: 120px;
+  height: 520px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column; /* Aligns children vertically */
+  align-items: center; /* Centers children horizontally in the container */
+  justify-content: center; /* Optional, if you also want to center the items vertically within the .user-info container */
+}

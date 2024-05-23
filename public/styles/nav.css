@@ -4,6 +4,9 @@ nav {
   background-color: #4056A1;
   color: #FFFFFF;
   margin-right: 1.5em;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
 }
 
 nav span {
