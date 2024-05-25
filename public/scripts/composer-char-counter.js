@@ -6,7 +6,8 @@ $(document).ready(function() {
     const currCharCount = $(this).val().length;
     
     //Counter element locates the counter
-    const counterElem = $(this).closest('form').find('.counter').
+    const counterElem = $(this).closest('form').find('.counter');
+
     const remainingChars = 140 - currCharCount;
     
     //updating counter elem on DOM to reflect current changes in remaining characters

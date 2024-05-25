@@ -1,0 +1,15 @@
+.tweet-all {
+  display: flex;
+  margin-top: 1rem;
+  align-content: stretch;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.tweet {
+  width: 80%;
+  margin: 1em;
+  border: 5px solid #545149;
+}
