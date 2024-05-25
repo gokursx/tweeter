@@ -2,11 +2,11 @@ $(document).ready(function() {
   // --- our code goes here ---
   $('#tweet-text').on('keyup', function(e) {
    
-    //tracking character count input from user using keyup
+    //counts the length of characters inthe box.
     const currCharCount = $(this).val().length;
     
-    //locating the counter element
-    const counterElem = $(this).parent().children('.under-tweet-input').children('.counter');
+    //Counter element locates the counter
+    const counterElem = $(this).closest('form').find('.counter').
     const remainingChars = 140 - currCharCount;
     
     //updating counter elem on DOM to reflect current changes in remaining characters
