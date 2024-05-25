@@ -22,11 +22,3 @@ button {
   float: right;
 }
 
-.tweet-text {
-  border-bottom: 5px solid #545149;
-  background-color: #f1f2f6;
-  font-weight: 600;
-  font-size: 1.6rem;
-  line-height: 1.2;
-  padding-top: 0.4rem;
-}
