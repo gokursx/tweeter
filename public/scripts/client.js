@@ -19,7 +19,7 @@
 
 
 
-const createTweetElement = function(tweetData) {
+const createTweetElement = function (tweetData) {
   const $tweet = $(`<article class="tweet">Hello world
   
 <article class="tweet">
@@ -36,6 +36,8 @@ const createTweetElement = function(tweetData) {
         ${escape(tweetData.content.text)}
       </div>
       <footer class="tweet-footer">
+      //Displays value of instance from last tweet is created
+      <span class="tweet-date">${timeago.format(tweetData.created_at)}</span>
         <div class="tweet-response">
           <i class="fas fa-flag"></i>
           <i class="fas fa-retweet"></i>
@@ -69,7 +71,8 @@ const data = [
     "user": {
       "name": "Descartes",
       "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
+      "handle": "@rd"
+    },
     "content": {
       "text": "Je pense , donc je suis"
     },
@@ -77,21 +80,21 @@ const data = [
   }
 ]
 
-const renderTweets = function(tweets) {
-// loops through tweets
-// calls createTweetElement for each tweet
-// takes return value and appends it to the tweets container
-for(let tweet of tweets) {
+const renderTweets = function (tweets) {
+  // loops through tweets
   // calls createTweetElement for each tweet
-  const tweetElement = createTweetElement(tweet);
   // takes return value and appends it to the tweets container
-  $('#tweets-container').prepend(tweetElement);
-}
+  for (let tweet of tweets) {
+    // calls createTweetElement for each tweet
+    const tweetElement = createTweetElement(tweet);
+    // takes return value and appends it to the tweets container
+    $('#tweets-container').prepend(tweetElement);
+  }
 }
 
 renderTweets(data);
 
-$(document).ready(function() {
+$(document).ready(function () {
 
   // Function to escape potentially dangerous characters
   const escape = function (str) {
@@ -101,12 +104,12 @@ $(document).ready(function() {
   };
 
   // Function to create a single tweet element
-  const createTweetElement = function(tweetData) {
+  const createTweetElement = function (tweetData) {
     // Implementation remains the same as your previous code...
   };
 
   // Function to render an array of tweets
-  const renderTweets = function(tweets) {
+  const renderTweets = function (tweets) {
     $('#tweets-container').empty(); // Clears out existing tweets before rendering new ones
     for (let tweet of tweets) {
       const tweetElement = createTweetElement(tweet);
@@ -115,15 +118,15 @@ $(document).ready(function() {
   };
 
   // Function to fetch tweets from the server
-  const loadTweets = function() {
+  const loadTweets = function () {
     $.ajax({
       url: '/tweets',
       method: 'GET',
       dataType: 'json', // Expecting JSON data in response
-      success: function(tweets) {
+      success: function (tweets) {
         renderTweets(tweets); // Call renderTweets to render the fetched tweets
       },
-      error: function() {
+      error: function () {
         alert("Error fetching tweets");
       }
     });
@@ -131,5 +134,5 @@ $(document).ready(function() {
 
   // Call loadTweets to fetch and render tweets when the page is loaded
   loadTweets();
-  
+
 });
