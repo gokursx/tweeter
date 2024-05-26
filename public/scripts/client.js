@@ -127,6 +127,7 @@ $(document).ready(function () {
       },
       error: function () {
         alert("Error fetching tweets");
+        console.error('Error message:', error);
       }
     });
   };
@@ -136,56 +137,75 @@ $(document).ready(function () {
 
 });
 
-
-$(document).ready(function () {
-
-  // Assuming your form has an ID of 'formId'
-  $('#formId').on('submit', function (event) {
-    event.preventDefault(); // Prevent the default form submission
-
-    const tweetContent = $(this).find('textarea').val(); // Get the value of textarea
-
-    // Validation checks
+$(document).ready(function() {
+  
+  // Function to perform tweet content validation
+  function isTweetValid(tweetContent) {
     if (!tweetContent.trim()) {
-      alert("The tweet content cannot be empty!"); // Notify user that the content is empty
-    } else if (tweetContent.length > 140) { // Assuming 140 is the max tweet length
-      alert("The tweet content is too long!"); // Notify user that the content exceeds the max length
-    } else {
-      // Data is valid, proceed with form submission via AJAX
-      const formData = $(this).serialize(); // Serialize the form data into a query string
+      alert("The tweet content cannot be empty!");
+      return false;
+    } else if (tweetContent.length > 140) {
+      alert("The tweet content is too long!");
+      return false;
+    }
+    return true;
+  }
 
+  // Function to load tweets from the server
+  function loadTweets() {
+    $.ajax({
+      url: '/tweets',
+      method: 'GET',
+      dataType: 'json',
+      success: function(tweets) {
+        renderTweets(tweets);
+      },
+      error: function() {
+        alert("Error fetching tweets");
+      }
+    });
+  }
+
+  // Function to render an array of tweets
+  function renderTweets(tweets) {
+    $('#tweets-container').empty();
+    for (let tweet of tweets) {
+      const tweetElement = createTweetElement(tweet);
+      $('#tweets-container').prepend(tweetElement);
+    }
+  }
+
+  // Function to create a single tweet element
+  function createTweetElement(tweetData) {
+    // Implementation remains the same as your previous code...
+  }
+
+  // Form submission handler
+  $('#formId').on('submit', function(event) {
+    event.preventDefault();
+    const tweetContent = $(this).find('textarea').val();
+    
+    // Use isTweetValid function to check if the tweet content is valid
+    if (isTweetValid(tweetContent)) {
+      // Serialize the form data into a query string
+      const formData = $(this).serialize();
+      
+      // AJAX POST request if the tweet content is valid
       $.ajax({
         type: "POST",
-        url: "/tweets", // The server endpoint to submit tweets
+        url: "/tweets",
         data: formData,
-        success: function () {
+        success: function() {
           console.log("Tweet submitted successfully");
-          // Here, you might want to clear the form, or reload the tweets to display the new one
-          // For now, just reloading the tweets as an example
-          loadTweets();
+          loadTweets(); // Reload tweets to display the new tweet
         },
-        error: function () {
+        error: function() {
           alert("Failed to submit tweet");
         }
       });
     }
   });
 
-  // Function to load tweets from the server (make sure you have defined this based on previous instructions)
-  const loadTweets = function () {
-    $.ajax({
-      url: '/tweets',
-      method: 'GET',
-      dataType: 'json', // Expecting JSON data in response
-      success: function (tweets) {
-        renderTweets(tweets); // Call renderTweets to render the fetched tweets
-      },
-      error: function () {
-        alert("Error fetching tweets");
-      }
-    });
-  };
-
-  // Immediately load existing tweets
+  // Load tweets when the page is ready
   loadTweets();
 });
