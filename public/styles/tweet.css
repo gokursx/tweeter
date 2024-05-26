@@ -49,12 +49,12 @@ article.tweet:hover .actions i {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.tweet footer i {
+.actions i {
   color: #657786;
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
-.tweet footer i:hover {
-  color: #1da1f2; /* Change according to your design (this is a Twitter-like blue) */
+.actions i:hover {
+  color: #1da1f2; /* Specify according to your design preference */
 }

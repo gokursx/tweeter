@@ -77,27 +77,29 @@
       </form>
     </section>
   </main>
-  <section class="tweet-all" id="tweets-container"> </section>
-  <section>
-    <!-- This is where your tweet article will be placed -->
+  <<section class="tweet-all" id="tweets-container">
+    <!-- Individual Tweet -->
     <article class="tweet">
       <header>
-        <img src="avatar.jpg" alt="User Avatar" aria-role="presentation"/>
+        <img src="avatar.jpg" alt="User Avatar" role="presentation"/>
         <div>
-            <h2>User Name <span>@username</span></h2>
-            <time datetime="2023-01-01">1st January 2023</time>
+          <h2>User Name <span>@username</span></h2>
+          <time datetime="2023-01-01">1st January 2023</time>
         </div>
       </header>
       <section class="tweet-text">
         This is my tweet.
       </section>
       <footer>
-        <i name="reply" class="fas fa-reply"></i>
-        <i name="retweet" class="fas fa-retweet"></i>
-        <i name="heart" class="fas fa-heart"></i>
+        <div class="actions">
+          <i name="reply" class="fas fa-reply"></i>
+          <i name="retweet" class="fas fa-retweet"></i>
+          <i name="heart" class="fas fa-heart"></i>
+        </div>
       </footer>
     </article>
-</section>
+    <!-- Any additional tweets would follow here -->
+  </section>
 
   <script src="/scripts/composer-char-counter.js"></script>
 </body>
