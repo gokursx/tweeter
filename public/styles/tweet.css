@@ -38,12 +38,7 @@ article.tweet:hover .actions i {
   color: #1da1f2; /* Light blue, typical to Twitter. Adjust color as per your UI design */
 }
 
-.tweet {
-  border: 1px solid #e1e8ed;
-  border-radius: 5px;
-  padding: 10px;
-  transition: box-shadow 0.3s ease;
-}
+
 
 .tweet:hover {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -55,6 +50,15 @@ article.tweet:hover .actions i {
   transition: color 0.3s ease;
 }
 
-.actions i:hover {
-  color: #1da1f2; /* Specify according to your design preference */
+/* Specific hover styles for each icon */
+.actions i[name="reply"]:hover {
+  color: #1da1f2; /* Adjust the color to suit your design */
+}
+
+.actions i[name="retweet"]:hover {
+  color: #19a20e; /* Different color for retweet */
+}
+
+.actions i[name="heart"]:hover {
+  color: #e0245e; /* Different color for like/heart */
 }
