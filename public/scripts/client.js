@@ -4,17 +4,18 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 // Test / driver code (temporary). Eventually will get this from the server.
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-  "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-  "created_at": 1461116232227
-}
+
+// const tweetData = {
+//   "user": {
+//     "name": "Newton",
+//     "avatars": "https://i.imgur.com/73hZDYK.png",
+//       "handle": "@SirIsaac"
+//     },
+//   "content": {
+//       "text": "If I have seen further it is by standing on the shoulders of giants"
+//     },
+//   "created_at": 1461116232227
+// }
 
 
 
@@ -89,3 +90,46 @@ for(let tweet of tweets) {
 }
 
 renderTweets(data);
+
+$(document).ready(function() {
+
+  // Function to escape potentially dangerous characters
+  const escape = function (str) {
+    const div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
+  // Function to create a single tweet element
+  const createTweetElement = function(tweetData) {
+    // Implementation remains the same as your previous code...
+  };
+
+  // Function to render an array of tweets
+  const renderTweets = function(tweets) {
+    $('#tweets-container').empty(); // Clears out existing tweets before rendering new ones
+    for (let tweet of tweets) {
+      const tweetElement = createTweetElement(tweet);
+      $('#tweets-container').prepend(tweetElement);
+    }
+  };
+
+  // Function to fetch tweets from the server
+  const loadTweets = function() {
+    $.ajax({
+      url: '/tweets',
+      method: 'GET',
+      dataType: 'json', // Expecting JSON data in response
+      success: function(tweets) {
+        renderTweets(tweets); // Call renderTweets to render the fetched tweets
+      },
+      error: function() {
+        alert("Error fetching tweets");
+      }
+    });
+  };
+
+  // Call loadTweets to fetch and render tweets when the page is loaded
+  loadTweets();
+  
+});
