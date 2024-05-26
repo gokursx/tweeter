@@ -68,39 +68,13 @@
   <main class="container">
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
-      <form action="/tweets" method="post" enctype="application/x-www-form-urlencoded">
+      <form id="formId" action="/tweets" method="post" enctype="application/x-www-form-urlencoded">
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text"></textarea>
         <div>
           <button type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
-        </div>
-        <script>
-          $(document).ready(function(){
-            $("#formId").on("submit", function(event){
-              event.preventDefault(); // Prevent the default form submission
-          
-              // Serialize the form data
-              var formData = $(this).serialize();
-          
-              // POST the serialized data to the server
-              $.ajax({
-                type: "POST",
-                url: "/submit-form", // Update this to your server endpoint URL
-                data: formData, // The serialized form data
-                success: function(response){
-                  console.log("Server responded with:", response);
-                  // Handle response here
-                },
-                error: function(xhr, status, error){
-                  console.error("Submission failed:", error);
-                  // Handle error here
-                }
-              });
-            });
-          });
-          </script>
-          
+        </div>       
       </form>
     </section>
   </main>

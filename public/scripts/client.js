@@ -137,8 +137,8 @@ $(document).ready(function () {
 
 });
 
-$(document).ready(function() {
-  
+$(document).ready(function () {
+
   // Function to perform tweet content validation
   function isTweetValid(tweetContent) {
     if (!tweetContent.trim()) {
@@ -157,10 +157,10 @@ $(document).ready(function() {
       url: '/tweets',
       method: 'GET',
       dataType: 'json',
-      success: function(tweets) {
+      success: function (tweets) {
         renderTweets(tweets);
       },
-      error: function() {
+      error: function () {
         alert("Error fetching tweets");
       }
     });
@@ -181,25 +181,27 @@ $(document).ready(function() {
   }
 
   // Form submission handler
-  $('#formId').on('submit', function(event) {
+  $('#formId').on('submit', function (event) {
     event.preventDefault();
     const tweetContent = $(this).find('textarea').val();
-    
+
     // Use isTweetValid function to check if the tweet content is valid
     if (isTweetValid(tweetContent)) {
       // Serialize the form data into a query string
       const formData = $(this).serialize();
-      
+
       // AJAX POST request if the tweet content is valid
       $.ajax({
         type: "POST",
         url: "/tweets",
         data: formData,
-        success: function() {
+        success: function () {
           console.log("Tweet submitted successfully");
+          // Clear the textarea upon successful submission
+          $('#formId').find('textarea').val('');
           loadTweets(); // Reload tweets to display the new tweet
         },
-        error: function() {
+        error: function () {
           alert("Failed to submit tweet");
         }
       });
@@ -209,3 +211,4 @@ $(document).ready(function() {
   // Load tweets when the page is ready
   loadTweets();
 });
+
