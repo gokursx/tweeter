@@ -1,15 +1,39 @@
-.tweet-all {
-  display: flex;
-  margin-top: 1rem;
-  align-content: stretch;
-  justify-content: center;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  align-items: stretch;
+article.tweet {
+  border: 1px solid #e1e8ed;
+  border-radius: 5px;
+  padding: 10px;
+  transition: box-shadow 0.3s ease;
 }
 
-.tweet {
-  width: 80%;
-  margin: 1em;
-  border: 5px solid #545149;
+article.tweet header,
+article.tweet footer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+header img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.username,
+.userhandle {
+  margin-right: 10px;
+}
+
+.actions i {
+  margin: 0 5px;
+  color: #657786;
+  transition: color 0.3s ease;
+}
+
+article.tweet:hover {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+article.tweet:hover .actions i {
+  color: #1da1f2; /* Light blue, typical to Twitter. Adjust color as per your UI design */
 }
