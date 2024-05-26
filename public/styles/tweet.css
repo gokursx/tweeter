@@ -37,3 +37,24 @@ article.tweet:hover {
 article.tweet:hover .actions i {
   color: #1da1f2; /* Light blue, typical to Twitter. Adjust color as per your UI design */
 }
+
+.tweet {
+  border: 1px solid #e1e8ed;
+  border-radius: 5px;
+  padding: 10px;
+  transition: box-shadow 0.3s ease;
+}
+
+.tweet:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.tweet footer i {
+  color: #657786;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.tweet footer i:hover {
+  color: #1da1f2; /* Change according to your design (this is a Twitter-like blue) */
+}
