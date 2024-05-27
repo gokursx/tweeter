@@ -24,7 +24,6 @@ $(document).ready(function () {
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
-  const safeHTML = `<p>${escape(textFromUser)}</p>`;
 
   const data = [
     {
@@ -55,22 +54,13 @@ $(document).ready(function () {
   // Function to perform tweet content validation
   function isTweetValid(tweetContent) {
     if (!tweetContent.trim()) {
-      alert("The tweet content cannot be empty!");
-      return false;
-    } else if (tweetContent.length > 140) {
-      alert("The tweet content is too long!");
-      return false;
-    }
-    return true;
-  }
-  function isTweetValid(tweetContent) {
-    if (!tweetContent.trim()) {
       return "The tweet content cannot be empty!";
     } else if (tweetContent.length > 140) {
       return "The tweet content is too long!";
     }
     return null; // Indicates success
   }
+
   // Function to load tweets from the server
   function loadTweets() {
     $.ajax({
@@ -86,11 +76,7 @@ $(document).ready(function () {
     });
   }
 
-
   renderTweets(data);
-
-  // Function to create a single tweet element
-
 
   // Function to create a single tweet element
   const createTweetElement = function (tweetData) {
@@ -121,7 +107,7 @@ $(document).ready(function () {
     return $tweet;
   };
 
-  // Function to render tweets
+
   // Function to render tweets
   function renderTweets(tweets) {
     $('#tweets-container').empty();
@@ -130,7 +116,6 @@ $(document).ready(function () {
       $('#tweets-container').prepend($tweet);
     }
   }
-
 
   // Test / driver code (temporary)
   console.log($tweet); // to see what it looks like
