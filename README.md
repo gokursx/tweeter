@@ -15,18 +15,23 @@ This repository is the starter code for the project: Students will fork and clon
 ## Dependencies
 - body-parser
 - chance
-- express
 - md5
-
-## Work flow
-- 
-
-## Functionality
-- After registration the page checks the credentials upon logging in. If user name matches password, user logs in otherwise shows "password is wrong" for incorrect password (login page) or "Username already exists" (Register page).
-
-## Final Product
-!["Screenshot of URLs page"](https://github.com/gokursx/tinyapp/blob/main/docs/createnewurl-page.png%20.png)
-!["Screenshot of createnewurl page"](https://github.com/gokursx/tinyapp/blob/main/docs/createnewurl-page.png%20.png)
-
 - Express
 - Node 5.10.x or above
+
+## Work flow
+- User submit tweets in the tweetbox
+- After submission tweets appears below with latest on top.
+
+## Functionality
+- If user hovers over tweets, the tweet box is surrounded by box shadow.
+- If user hovers over icons, icons shows color.
+- If exceeds the maximum set limit (140 chars), then characters shows negative value and upon submission notifies user with a text.
+- If text content is empty upon submission notifies user to type the tweet.
+- Tweets shows its creation instance with user name, avatar and handle.
+- Webpage adjusts to screens for desktop, tablet and mobile.
+
+## Final Product
+!["Screenshot of Tweet box"](https://github.com/gokursx/tweeter/blob/master/docs/tweet-box.png)
+!["Screenshot of Tweets"](https://github.com/gokursx/tweeter/blob/master/docs/tweets.png)
+
