@@ -146,6 +146,7 @@ $(document).ready(function () {
             console.log("Tweet submitted successfully");
             // Clear the textarea upon successful submission
             $('#formId').find('textarea').val('');
+            $(".counter").text(140);
             loadTweets(); // Reload tweets to display the new tweet without refreshing the page
           },
           error: function () {
@@ -158,6 +159,10 @@ $(document).ready(function () {
       }
     });
   });
+
+  $("#writeTweetButton").click(function () {
+    $("#tweet-text.").focus()
+  })
 
 //   // Load tweets when the page is ready
 //   $(document).ready(function () {
