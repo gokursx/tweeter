@@ -1,25 +1,42 @@
-.new-tweet {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 1.5em;
-  margin-top: 0.5rem;
-  flex-wrap: nowrap;
-  align-content: space-between;
-  justify-content: flex-start;
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
-button {
-  display: flex;
-  align-items: center;
-  font-family: "Bungee", sans-serif;
-  background-color: #4056a1;
-  color: #ffffff;
+/*
+ * Global layout stuff
+ */
+
+body {
+  color: #545149;
+  background-color: #f4f1ec;
+  font-size: 24px;
 }
 
-.counter {
-  font-family: "Bungee", sans-serif;
-  float: right;
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+
+ body {
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+
+nav span {
+  font-family: 'Bungee', sans-serif;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  background-color: inherit;
 }
 
 /* Tablet Styles */
@@ -28,28 +45,34 @@ button {
     width: 33.3%;
     line-height: 600px;
   }
+
   .content {
     width: 66.7%;
-    float: right;
+    float: right
   }
+
   .footer {
     clear: right;
   }
 }
+
 /* Desktop styles */
 @media only screen and (min-width: 1024px) {
   .hero {
     width: 33.3%;
     float: left;
   }
+
   .feature {
     line-height: 300px;
   }
+
   .menu {
     background-color: #111111;
     color: #f0f0f0;
     text-align: left;
   }
+
   .tagline {
     display: inline;
     font-style: italic;
@@ -58,6 +81,7 @@ button {
     color: tomato;
     float: right;
   }
+
   .main {
     max-width: 1024px;
     font-size: 16px;

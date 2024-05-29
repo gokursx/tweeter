@@ -1,0 +1,170 @@
+header {
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+
+  }
+}
+
+.username,
+.userhandle {
+  margin-right: 10px;
+}
+
+section {
+  &.tweet-all {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // align-items: center;
+    align-content: center;
+    gap: 18px;
+    padding: 0 18px;
+
+    article {
+      &.tweet {
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 10px;
+        transition: box-shadow 0.3s ease;
+
+
+        // header,
+        footer {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          // align-items: center;
+          align-content: center;
+
+          .tweet-response {
+            flex-grow: 1;
+            display: flex;
+            justify-content: flex-end;
+            gap: 5px;
+
+            i:hover {
+
+                          color: yellowgreen;
+
+            }
+          }
+
+          .tweet-date {
+            flex-grow: 3;
+          }
+        }
+
+        &:hover {
+          box-shadow: 0px 0px 23px 7px rgba(8, 48, 22, 0.56);
+        }
+      }
+    }
+  }
+}
+
+// .actions i {
+//   margin: 0 5px;
+//   color: #657786;
+//   transition: color 0.3s ease;
+// }
+
+// article.tweet:hover {
+//   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+//   background-color: #e0245e;
+// }
+
+// article.tweet:hover .actions i {
+//   color: #1da1f2; 
+//   background-color: #40e024;
+// }
+
+
+// .tweet:hover {
+//   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+//   background-color: #2437e0;
+// }
+
+// .actions i {
+//   color: #657786;
+//   cursor: pointer;
+//   transition: color 0.3s ease;
+// }
+
+/* Specific hover styles for each icon */
+// .actions i[name="reply"]:hover {
+//   color: #1da1f2; /* Adjust the color to suit your design */
+// }
+
+// .actions i[name="retweet"]:hover {
+//   color: #19a20e; /* Different color for retweet */
+// }
+
+// .actions i[name="heart"]:hover {
+//   color: #e0245e; /* Different color for like/heart */
+// }
+
+#error-message {
+  color: #a94442;
+  /* dark red */
+  background-color: #f2dede;
+  /* light red */
+  border-color: #ebccd1;
+  /* red border */
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 768px) {
+  .feature {
+    width: 33.3%;
+    line-height: 600px;
+  }
+
+  .content {
+    width: 66.7%;
+    float: right
+  }
+
+  .footer {
+    clear: right;
+  }
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  .hero {
+    width: 33.3%;
+    float: left;
+  }
+
+  .feature {
+    line-height: 300px;
+  }
+
+  .menu {
+    background-color: #111111;
+    color: #f0f0f0;
+    text-align: left;
+  }
+
+  .tagline {
+    display: inline;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 12px;
+    color: tomato;
+    float: right;
+  }
+
+  .main {
+    max-width: 1024px;
+    font-size: 16px;
+    margin: 0 auto;
+  }
+}

@@ -1,25 +1,20 @@
-.new-tweet {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 1.5em;
-  margin-top: 0.5rem;
-  flex-wrap: nowrap;
-  align-content: space-between;
-  justify-content: flex-start;
-}
-
-button {
+header {
   display: flex;
   align-items: center;
-  font-family: "Bungee", sans-serif;
-  background-color: #4056a1;
-  color: #ffffff;
+  justify-content: center;
+  height: 400px; /* Adjusted, no duplication needed */
+  width: 100%;
+  background-color: #ab8000;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+  box-sizing: border-box;
+  padding-top: 120px; /* Adjust if this includes the navbar height */
 }
 
-.counter {
-  font-family: "Bungee", sans-serif;
-  float: right;
+.user-info {
+  display: flex;
+  flex-direction: column; /* Aligns children vertically */
+  align-items: center; /* Centers children horizontally in the container */
+  justify-content: center; /* Optional, if you also want to center the items vertically within the .user-info container */
 }
 
 /* Tablet Styles */
@@ -28,28 +23,34 @@ button {
     width: 33.3%;
     line-height: 600px;
   }
+
   .content {
     width: 66.7%;
-    float: right;
+    float: right
   }
+
   .footer {
     clear: right;
   }
 }
+
 /* Desktop styles */
 @media only screen and (min-width: 1024px) {
   .hero {
     width: 33.3%;
     float: left;
   }
+
   .feature {
     line-height: 300px;
   }
+
   .menu {
     background-color: #111111;
     color: #f0f0f0;
     text-align: left;
   }
+
   .tagline {
     display: inline;
     font-style: italic;
@@ -58,6 +59,7 @@ button {
     color: tomato;
     float: right;
   }
+
   .main {
     max-width: 1024px;
     font-size: 16px;
