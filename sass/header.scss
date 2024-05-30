@@ -1,4 +1,4 @@
-header {
+.main_header {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,14 +19,26 @@ header {
 
 /* Tablet Styles */
 @media only screen and (min-width: 768px) {
-  .feature {
+  body {
+    display: flex;
+  }
+  .main_header {
     width: 33.3%;
-    line-height: 600px;
+    // line-height: 600px;
   }
 
-  .content {
+  .user-info {
+    height: 100%;
+  }
+  .user-info img {
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: relative;
+  }
+  .container {
     width: 66.7%;
-    float: right
+    margin-top: 100px;
   }
 
   .footer {

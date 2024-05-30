@@ -9,6 +9,13 @@
   justify-content: flex-start;
 }
 
+#tweet-text {
+  background: none;
+  border: none;
+  border-bottom: 3px solid black;
+  width: 100%;
+}
+
 button {
   display: flex;
   align-items: center;

@@ -29,7 +29,7 @@ This repository is the starter code for the project: Students will fork and clon
 - If exceeds the maximum set limit (140 chars), then characters shows negative value and upon submission notifies user with a text.
 - If text content is empty upon submission notifies user to type the tweet.
 - Tweets shows its creation instance with user name, avatar and handle.
-- Webpage adjusts to screens for desktop, tablet and mobile.
+- Webpage adjusts to screens for desktop and mobile.
 
 ## Final Product
 !["Screenshot of Tweet box"](https://github.com/gokursx/tweeter/blob/master/docs/tweet-box.png)

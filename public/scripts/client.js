@@ -145,6 +145,6 @@ $(document).ready(function () {
   });
 
   $("#writeTweetButton").click(function () {
-    $("#tweet-text.").focus()
+    $("#tweet-text").focus()
   })
 });
