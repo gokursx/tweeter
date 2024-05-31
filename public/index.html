@@ -46,19 +46,23 @@
     integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+  <script src="https://kit.fontawesome.com/1aaeb7d23f.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <!-- Top nav bar (fixed) -->
+  <!-- Top nav bar -->
   <nav>
     <span>tweeter</span>
-    <button id="writeTweetButton">Write a new tweet</button>
+    <button class="write-new-tweet" id="writeTweetButton">Write a new tweet
+      <i class="fas fa-angle-double-down"></i>
+    </button>
+   
   </nav>
 
-  <header  class = "main_header"> 
+  <header class="main_header">
 
-    
+
     <div class="user-info">
       <img src="/images/profile-hex.png">
       <h2>Gokul Krishna</h2>
@@ -87,14 +91,14 @@
     </section>
     <section class="tweet-all" id="tweets-container">
       <!-- Individual Tweet -->
-  
+
       <!-- Any additional tweets would follow here -->
     </section>
   </main>
-  
+
   <script src="/scripts/composer-char-counter.js"></script>
-  
-  
+
+
 </body>
 
 </html>

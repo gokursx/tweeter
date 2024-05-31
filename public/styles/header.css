@@ -10,6 +10,16 @@
   padding-top: 120px; /* Adjust if this includes the navbar height */
 }
 
+.fa-angle-double-down {
+  align-items: flex-end;
+}
+
+.write-new-tweet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .user-info {
   display: flex;
   flex-direction: column; /* Aligns children vertically */
